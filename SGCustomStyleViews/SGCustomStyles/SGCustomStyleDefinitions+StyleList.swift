@@ -31,6 +31,8 @@ enum SGCustomStyles : String {
     case BackgroundViewGrey
     case WhiteLabel1
     case GreenRightLabel1
+    case GreenRoundedButton
+    case WhiteRoundedButton
 
     func getStyleName()->String{
         return self.rawValue

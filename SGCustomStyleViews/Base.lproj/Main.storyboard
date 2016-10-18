@@ -93,6 +93,13 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="customStyle" value="CheckboxButton"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ez4-wf-KCL" customClass="SGButton" customModule="SGCustomStyleViews" customModuleProvider="target">
+                                <rect key="frame" x="43" y="462" width="267" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="customStyle" value="GreenRoundedButton"/>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.95183189655172418" alpha="1" colorSpace="calibratedWhite"/>
                     </view>

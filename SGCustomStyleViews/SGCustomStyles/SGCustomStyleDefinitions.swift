@@ -14,6 +14,9 @@ struct SGCustomStyleKeyConstants {
     static let ktextAlignment = "ktextAlignment"
 
     static let kBackgroundColor = "kBackgroundColor"
+    static let kHighligthedBackgroundColor = "kHighligthedBackgroundColor"
+    static let kDefaultBackgroundColor = "kDefaultBackgroundColor"
+    
     static let kBackgroundImages = "kBackgroundImages"
     static let kBackgroundImage = "kBackgroundImage"
 
@@ -84,6 +87,13 @@ public class CustomStyleDefinitions {
             [   SGCustomStyleKeyConstants.kTextColor : UIColor.whiteColor(),
                 SGCustomStyleKeyConstants.ktextAlignment: NSTextAlignment.Center,
                 SGCustomStyleKeyConstants.kTextFont: Fonts.Default(.Normal).getFont(18.0)],
+        
+        SGCustomStyles.GreenRoundedButton.getStyleName():
+            [   SGCustomStyleKeyConstants.kCornerRadius : 15.0,
+                SGCustomStyleKeyConstants.kDefaultBackgroundColor: UIColor.sgGreenColor(),
+                SGCustomStyleKeyConstants.kHighligthedBackgroundColor: UIColor.whiteColor(),
+                SGCustomStyleKeyConstants.kTextFont: Fonts.Default(.Normal).getFont(18.0),
+                SGCustomStyleKeyConstants.kTextColor : UIColor.whiteColor()],
         
         SGCustomStyles.GreenRightLabel1.getStyleName():
             [   SGCustomStyleKeyConstants.kTextColor : UIColor.sgGreenColor(),
