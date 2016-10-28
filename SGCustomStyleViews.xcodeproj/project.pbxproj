@@ -24,6 +24,8 @@
 		86371E191DA8357900B95ADF /* SGCustomStyleUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86371E151DA8357900B95ADF /* SGCustomStyleUtils.swift */; };
 		86371E1A1DA8357900B95ADF /* SGFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86371E161DA8357900B95ADF /* SGFonts.swift */; };
 		86371E1C1DA838FF00B95ADF /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86371E1B1DA838FF00B95ADF /* UIColor+Extensions.swift */; };
+		869224481DC3CBDB00098C73 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869224471DC3CBDB00098C73 /* UIImage+Extensions.swift */; };
+		8692244A1DC3CC0A00098C73 /* SGCustomStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 869224491DC3CC0A00098C73 /* SGCustomStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
