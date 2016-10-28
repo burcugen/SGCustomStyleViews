@@ -26,6 +26,7 @@ enum SGCustomStyles : String {
     case FormButtonWithoutBorder1
     case SelectionButtonWithBorder1
     case SelectionButtonWithBorder2
+    case SelectionButtonWithBorder3
     case NoDataViewLabel
     case BackgroundViewPurple
     case BackgroundViewGrey
@@ -34,6 +35,8 @@ enum SGCustomStyles : String {
     case GreenRoundedButton
     case WhiteRoundedButton
 
+    case NewStyleButton
+    case NewStyleButtonOverwriten
     func getStyleName()->String{
         return self.rawValue
     }

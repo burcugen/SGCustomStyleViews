@@ -16,13 +16,75 @@ class SGCustomStyleUtils{
             let styleInfo = CustomStyleDefinitions.sharedInstance.getCustomStyleInfo(styleKey) as [String:Any]
             
             if let button = control as? UIButton{
-                SGCustomStyleUtils.appleMTButtonCustomStyle(button, styleInfo: styleInfo)
+                SGCustomStyleUtils.applyButtonCustomStyle(button, styleInfo: styleInfo)
             }else if let label = control as? UILabel{
-                SGCustomStyleUtils.appleMTLabelCustomStyle(label, styleInfo: styleInfo)
+                SGCustomStyleUtils.applyLabelCustomStyle(label, styleInfo: styleInfo)
             }else if let view = control as? UIImageView{
-                SGCustomStyleUtils.appleMTImageViewCustomStyle(view, styleInfo: styleInfo)
+                SGCustomStyleUtils.applyImageViewCustomStyle(view, styleInfo: styleInfo)
             }else if let view = control as? UIView{
-                SGCustomStyleUtils.appleMTViewCustomStyle(view, styleInfo: styleInfo)
+                SGCustomStyleUtils.applyViewCustomStyle(view, styleInfo: styleInfo)
+            }
+        }
+    }
+    
+    static func applyButtonCustomStyle(button : UIButton, styleInfo : [String:Any]){
+        
+        let customStyle = styleInfo[SGCustomStyleKeyConstants.kCustomStyle] as? SGCustomStyle
+        if customStyle != nil{
+            if let titleColor = customStyle?.textColor {
+                button.setTitleColor(titleColor, forState: .Normal)
+            }
+            
+            if let font = customStyle?.textFont{
+                button.titleLabel?.font = font
+            }
+            
+            if let backgroundImages = customStyle!.backgroundImagesForStates{
+                for i in 0 ..< backgroundImages.count{
+                    let backgrndImageForState = backgroundImages[i]
+                    button.setBackgroundImage(backgrndImageForState.backgroundImage, forState: backgrndImageForState.state!)
+                }
+            }
+
+            
+            if let bgColor = customStyle?.backgroundColor{
+                button.backgroundColor = bgColor
+            }
+            
+            if let borderColor = customStyle?.borderColor{
+                button.layer.borderColor = borderColor.CGColor
+            }
+            
+            if let defBgColor = customStyle?.defaultBackgroundColor{
+                button.setBackgroundImage(UIImage.fromColor(defBgColor), forState: UIControlState.Normal)
+            }
+            
+            if let borderWidth =  customStyle?.borderWidth{
+                button.layer.borderWidth = borderWidth
+            }
+            
+            if let cornerRadius = customStyle?.cornerRadius{
+                button.layer.cornerRadius = cornerRadius
+                button.layer.masksToBounds =  cornerRadius > 0
+            }
+            
+            if let hAlignment = customStyle?.contentHorizontalAlignment{
+                button.contentHorizontalAlignment = hAlignment
+            }
+            
+            if let vAlignment = customStyle?.contentVerticalAlignment{
+                button.contentVerticalAlignment = vAlignment
+            }
+            
+            if let tEdgeInsets = customStyle?.titleEdgeInsets{
+                button.titleEdgeInsets = tEdgeInsets
+            }
+            
+            if let cEdgeInsets = customStyle?.contentEdgeInsets{
+                button.contentEdgeInsets = cEdgeInsets
+            }
+            if let iEdgeInsets = customStyle?.imageEdgeInsets{
+                button.imageEdgeInsets = iEdgeInsets
             }
         }
     }
@@ -68,36 +130,47 @@ class SGCustomStyleUtils{
         }
     }
     
-    static func appleMTLabelCustomStyle(label : UILabel, styleInfo : [String:Any]){
-        label.textColor = styleInfo[SGCustomStyleKeyConstants.kTextColor] as? UIColor ?? UIColor.whiteColor()
-        label.font = styleInfo[SGCustomStyleKeyConstants.kTextFont] as? UIFont ?? UIFont.systemFontOfSize(10.0)
-        label.textAlignment = styleInfo[SGCustomStyleKeyConstants.ktextAlignment] as? NSTextAlignment ?? NSTextAlignment.Left
-    }
-    
-    static func appleMTViewCustomStyle(view : UIView, styleInfo : [String:Any]){
-        view.backgroundColor = styleInfo[SGCustomStyleKeyConstants.kBackgroundColor] as? UIColor ?? UIColor.whiteColor()
-    }
-    
-    static func appleMTImageViewCustomStyle(imageView : UIImageView, styleInfo : [String:Any]){
-        self.appleMTViewCustomStyle(imageView, styleInfo: styleInfo)
-        
-        if let backgroundImageName = styleInfo[SGCustomStyleKeyConstants.kBackgroundImage] as? String{
-            imageView.image = UIImage.init(named: backgroundImageName)
+    static func applyLabelCustomStyle(label : UILabel, styleInfo : [String:Any]){
+        let customStyle = styleInfo[SGCustomStyleKeyConstants.kCustomStyle] as? SGCustomStyle
+
+        if(customStyle != nil){
+            if let textColor = customStyle?.textColor{
+                label.textColor = textColor
+            }
+            
+            if let textFont = customStyle?.textFont{
+                label.font = textFont
+            }
+            
+            if let textAlignment = customStyle?.textAlignment{
+                label.textAlignment = textAlignment
+            }
         }
     }
     
-}
-
-extension UIImage {
+    static func applyViewCustomStyle(view : UIView, styleInfo : [String:Any]){
+        let customStyle = styleInfo[SGCustomStyleKeyConstants.kCustomStyle] as? SGCustomStyle
+        
+        if(customStyle != nil){
+            
+            if let bgColor = customStyle?.backgroundColor{
+                view.backgroundColor = bgColor
+            }
+        }
+    }
     
-    static func fromColor(color: UIColor, size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
-        let rect = CGRect(origin: CGPointZero, size: size)
-        UIGraphicsBeginImageContext(rect.size)
-        let context = UIGraphicsGetCurrentContext()
-        CGContextSetFillColorWithColor(context, color.CGColor)
-        CGContextFillRect(context, rect)
-        let img = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return img
-}
+    static func applyImageViewCustomStyle(imageView : UIImageView, styleInfo : [String:Any]){
+        self.applyViewCustomStyle(imageView, styleInfo: styleInfo)
+
+        let customStyle = styleInfo[SGCustomStyleKeyConstants.kCustomStyle] as? SGCustomStyle
+
+        if(customStyle != nil){
+            
+            if let backgroundImages = customStyle!.backgroundImagesForStates{
+                imageView.image = backgroundImages[0].backgroundImage
+            }
+        }
+
+    }
+    
 }

@@ -46,6 +46,8 @@
 		86371E151DA8357900B95ADF /* SGCustomStyleUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = SGCustomStyleUtils.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		86371E161DA8357900B95ADF /* SGFonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGFonts.swift; sourceTree = "<group>"; };
 		86371E1B1DA838FF00B95ADF /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		869224471DC3CBDB00098C73 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		869224491DC3CC0A00098C73 /* SGCustomStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SGCustomStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,8 @@
 				86371E151DA8357900B95ADF /* SGCustomStyleUtils.swift */,
 				86371E161DA8357900B95ADF /* SGFonts.swift */,
 				86371E1B1DA838FF00B95ADF /* UIColor+Extensions.swift */,
+				869224471DC3CBDB00098C73 /* UIImage+Extensions.swift */,
+				869224491DC3CC0A00098C73 /* SGCustomStyle.swift */,
 			);
 			path = SGCustomStyles;
 			sourceTree = "<group>";
@@ -191,6 +195,7 @@
 				86371DF41DA8336C00B95ADF /* ViewController.swift in Sources */,
 				86371E111DA8340300B95ADF /* SGView.swift in Sources */,
 				86371DF21DA8336C00B95ADF /* AppDelegate.swift in Sources */,
+				8692244A1DC3CC0A00098C73 /* SGCustomStyle.swift in Sources */,
 				86371E0F1DA8340300B95ADF /* SGLabel.swift in Sources */,
 				86371E1A1DA8357900B95ADF /* SGFonts.swift in Sources */,
 				86371E0C1DA8340300B95ADF /* SGCheckboxButton.swift in Sources */,
@@ -199,6 +204,7 @@
 				86371E171DA8357900B95ADF /* SGCustomStyleDefinitions.swift in Sources */,
 				86371E0B1DA8340300B95ADF /* SGButton.swift in Sources */,
 				86371E1C1DA838FF00B95ADF /* UIColor+Extensions.swift in Sources */,
+				869224481DC3CBDB00098C73 /* UIImage+Extensions.swift in Sources */,
 				86371E191DA8357900B95ADF /* SGCustomStyleUtils.swift in Sources */,
 				86371E0D1DA8340300B95ADF /* SGControl.swift in Sources */,
 			);
@@ -352,6 +358,7 @@
 				86371E021DA8336C00B95ADF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
